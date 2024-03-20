@@ -1,0 +1,24 @@
+<h2>Lista de empleados</h2>
+<table class="table table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+         <!-- creo una variable de la instancia de clase empleado para iterar -->
+        <tr *ngFor = "let empleado of empleado" >
+            <td>{{empleado.nombre}}</td>
+            <td>{{empleado.apellido}}</td>
+            <td>{{empleado.email}}</td>
+            <td>
+                <button (click)="actualizarEmpleado(empleado.id)" class="btn btn-info">Editar</button>
+                <button (click)="eliminarEmpleado(empleado.id)" class="btn btn-info" style="margin-left: 10px;">Eliminar</button>
+                <button (click)="verDetalles(empleado.id)" class="btn btn-primary" style="margin-left: 10px;">Ver Detalles</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
